@@ -4,6 +4,19 @@ const btnClicked=(e)=>{
     inp.value+=e.target.innerText
 }
 
+const percentage=(e)=>{
+    const value = e.target.innerText;
+        
+    if (value === "%") {
+        if (inp.value) {
+            inp.value = (parseFloat(inp.value) / 100).toString();
+        }
+    } else {
+        inp.value += value;
+    }
+}
+
+
 const getResult=()=>{
     try{
         const result=eval(inp.value)
